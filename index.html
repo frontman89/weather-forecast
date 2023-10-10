@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header
+        class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        >
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap" />
+          </svg>
+          <span class="fs-3">Frontman Weather Forecast</span>
+        </a>
+      </header>
+    </div>
+
+    <div class="px-4 py-5 my-5 text-center">
+      <div id="weather-icon">
+        <!--thunderstorm-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-cloud-lightning-fill"
+          viewBox="0 0 16 16"
+          style="display: none"
+        >
+          <path
+            d="M7.053 11.276A.5.5 0 0 1 7.5 11h1a.5.5 0 0 1 .474.658l-.28.842H9.5a.5.5 0 0 1 .39.812l-2 2.5a.5.5 0 0 1-.875-.433L7.36 14H6.5a.5.5 0 0 1-.447-.724l1-2zm6.352-7.249a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10H13a3 3 0 0 0 .405-5.973z"
+          />
+        </svg>
+        <!--drizzle-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-cloud-drizzle-fill"
+          viewBox="0 0 16 16"
+          style="display: none"
+        >
+          <path
+            d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm-3.5 1.5a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm.747-8.498a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973z"
+          />
+        </svg>
+        <!--rain-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-cloud-rain-heavy-fill"
+          viewBox="0 0 16 16"
+          style="display: none"
+        >
+          <path
+            d="M4.176 11.032a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm3 0a.5.5 0 0 1 .292.643l-1.5 4a.5.5 0 0 1-.936-.35l1.5-4a.5.5 0 0 1 .644-.293zm.229-7.005a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10H13a3 3 0 0 0 .405-5.973z"
+          />
+        </svg>
+        <!--snow-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-snow2"
+          viewBox="0 0 16 16"
+          style="display: none"
+        >
+          <path
+            d="M8 16a.5.5 0 0 1-.5-.5v-1.293l-.646.647a.5.5 0 0 1-.707-.708L7.5 12.793v-1.086l-.646.647a.5.5 0 0 1-.707-.708L7.5 10.293V8.866l-1.236.713-.495 1.85a.5.5 0 1 1-.966-.26l.237-.882-.94.542-.496 1.85a.5.5 0 1 1-.966-.26l.237-.882-1.12.646a.5.5 0 0 1-.5-.866l1.12-.646-.884-.237a.5.5 0 1 1 .26-.966l1.848.495.94-.542-.882-.237a.5.5 0 1 1 .258-.966l1.85.495L7 8l-1.236-.713-1.849.495a.5.5 0 1 1-.258-.966l.883-.237-.94-.542-1.85.495a.5.5 0 0 1-.258-.966l.883-.237-1.12-.646a.5.5 0 1 1 .5-.866l1.12.646-.237-.883a.5.5 0 0 1 .966-.258l.495 1.849.94.542-.236-.883a.5.5 0 0 1 .966-.258l.495 1.849 1.236.713V5.707L6.147 4.354a.5.5 0 1 1 .707-.708l.646.647V3.207L6.147 1.854a.5.5 0 1 1 .707-.708l.646.647V.5a.5.5 0 0 1 1 0v1.293l.647-.647a.5.5 0 1 1 .707.708L8.5 3.207v1.086l.647-.647a.5.5 0 1 1 .707.708L8.5 5.707v1.427l1.236-.713.495-1.85a.5.5 0 1 1 .966.26l-.236.882.94-.542.495-1.85a.5.5 0 1 1 .966.26l-.236.882 1.12-.646a.5.5 0 0 1 .5.866l-1.12.646.883.237a.5.5 0 1 1-.26.966l-1.848-.495-.94.542.883.237a.5.5 0 1 1-.26.966l-1.848-.495L9 8l1.236.713 1.849-.495a.5.5 0 0 1 .259.966l-.883.237.94.542 1.849-.495a.5.5 0 0 1 .259.966l-.883.237 1.12.646a.5.5 0 0 1-.5.866l-1.12-.646.236.883a.5.5 0 1 1-.966.258l-.495-1.849-.94-.542.236.883a.5.5 0 0 1-.966.258L9.736 9.58 8.5 8.866v1.427l1.354 1.353a.5.5 0 0 1-.707.708l-.647-.647v1.086l1.354 1.353a.5.5 0 0 1-.707.708l-.647-.647V15.5a.5.5 0 0 1-.5.5z"
+          />
+        </svg>
+        <!--haze-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-cloud-haze-fill"
+          viewBox="0 0 16 16"
+          style="display: none"
+        >
+          <path
+            d="M4 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 2a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm2 2a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM13.405 4.027a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10H13a3 3 0 0 0 .405-5.973z"
+          />
+        </svg>
+        <!--clear sky-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-brightness-high-fill"
+          viewBox="0 0 16 16"
+          style="display: none"
+        >
+          <path
+            d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+          />
+        </svg>
+
+        <!--clouds-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-cloud-fill"
+          viewBox="0 0 16 16"
+          style="display: none"
+        >
+          <path
+            d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"
+          />
+        </svg>
+        <!--cloud moon fill-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          fill="currentColor"
+          class="bi bi-cloud-moon-fill"
+          viewBox="0 0 16 16"
+          style="display: none"
+        >
+          <path
+            d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5h-.027z"
+          />
+          <path
+            d="M11.286 1.778a.5.5 0 0 0-.565-.755 4.595 4.595 0 0 0-3.18 5.003 5.46 5.46 0 0 1 1.055.209A3.603 3.603 0 0 1 9.83 2.617a4.593 4.593 0 0 0 4.31 5.744 3.576 3.576 0 0 1-2.241.634c.162.317.295.652.394 1a4.59 4.59 0 0 0 3.624-2.04.5.5 0 0 0-.565-.755 3.593 3.593 0 0 1-4.065-5.422z"
+          />
+        </svg>
+      </div>
+      <h1 class="display-5 fw-bold text-body-emphasis">Weather Forecast</h1>
+      <form>
+        <input
+          type="text"
+          value=""
+          id="formInput"
+          placeholder="Enter location"
+        />
+        <button type="button">Search</button>
+      </form>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4" id="forecast"></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <footer
+        class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+      >
+        <div class="col-md-4 d-flex align-items-center">
+          <a
+            href="/"
+            class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+          >
+            <svg class="bi" width="30" height="24">
+              <use xlink:href="#bootstrap" />
+            </svg>
+          </a>
+          <span class="mb-3 mb-md-0 text-body-secondary"
+            >&copy; 2023 Frontman, Inc</span
+          >
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
